@@ -1,0 +1,53 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+#root{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(194, 255, 192);
+    .app{
+        padding: 10px;
+        .screen{
+            box-sizing: border-box;
+            background:#fff;
+            width: 95vw;
+            text-align: right;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+        .keys{
+            margin:20px auto;
+            .border-row{
+                display: flex;
+                justify-content: space-around;
+                margin-bottom: 10px;
+                .square{
+                    display: table;
+                    text-align: center;
+                    vertical-align: middle;
+                    width: 80px;
+                    height: 80px;
+                    background-color: #fff;
+                    span{
+                        display: table-cell;
+                        vertical-align: middle;
+                    }
+                }
+                .bg-yellow{
+                    background-color: orange;
+                }
+                .bg-blue{
+                    background-color: lightblue;
+                }
+            }
+
+        }
+        .history{
+            width: 95vw;
+            background-color: red;
+        }
+    }
+
+}
