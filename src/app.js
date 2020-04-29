@@ -79,8 +79,11 @@ class History extends React.Component{
             return (
                 <div className="history">
                     <ul>
-                        <li>1</li>
-                        <li>2</li>
+                        {
+                            this.props.logs.map((log)=>{
+                                return <li className="item">{log}</li>
+                            })
+                        }
                     </ul>
                 </div>
             )
@@ -95,7 +98,8 @@ export default class App extends React.Component{
         this.state={
             screenData:'0',
             lastIsOperator:false,
-            isShow:false
+            isShow:false,
+            logs:[]
         }
     }
     handleClick(target){
@@ -133,6 +137,8 @@ export default class App extends React.Component{
 
         }else if(target=='='){
             var result=eval(this.state.screenData)
+            var log=this.state.screenData+'='+result
+            this.state.logs.push(log)
             this.setState({
                 screenData:result
             })
@@ -170,11 +176,12 @@ export default class App extends React.Component{
     render(){
         var screenData=this.state.screenData
         var isShowHistory=this.state.isShow
+        var logs=this.state.logs
         return(
             <div className="app">
                 <Screen screenData={screenData}/>
                 <Board onClick={(target)=>this.handleClick(target)}/>
-                <History  isShowHistory={isShowHistory}/>
+                <History  isShowHistory={isShowHistory} logs={logs}/>
             </div>
         )
     }
