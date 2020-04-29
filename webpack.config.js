@@ -24,7 +24,7 @@ module.exports={
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             title:'react计算器',
-            template:'./src/index.html'
+            template:'./public/index.html'
         })
     ],
     devServer:{
